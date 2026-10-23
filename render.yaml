@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: qc-pdp-firecrawl-mcp
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: FIRECRAWL_API_KEY
+        sync: false
+      - key: MCP_ACCESS_TOKEN
+        sync: false
+      - key: MAX_MARKDOWN_CHARS
+        value: "30000"
+      - key: REQUEST_TIMEOUT_SECONDS
+        value: "60"
